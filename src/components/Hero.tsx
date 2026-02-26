@@ -24,7 +24,7 @@ export default function Hero() {
             </span>
           </div>
 
-          <h1 className="text-4xl sm:text-5xl md:text-7xl font-black text-white uppercase tracking-tighter leading-[0.9] mb-6">
+          <h1 className="text-[2.6rem] sm:text-5xl md:text-7xl font-black text-white uppercase tracking-tighter leading-[0.9] mb-6">
             Надежный <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-600 to-red-400">
               автосервис
