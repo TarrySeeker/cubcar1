@@ -1,6 +1,49 @@
+import React, { useEffect } from "react";
 import { MapPin, Phone, Mail, Clock, CreditCard } from "lucide-react";
 
 export default function Contacts() {
+  useEffect(() => {
+    let map;
+
+    const initMap = () => {
+      if (window.DG) {
+        window.DG.then(() => {
+          // Координаты из вашего iframe
+          const coords = [45.019468, 39.063186];
+
+          // Инициализация карты
+          map = window.DG.map("map-root", {
+            center: coords,
+            zoom: 16,
+            fullscreenControl: false,
+            zoomControl: false, // Скрываем контролы, чтобы не мешали кнопке
+            scrollWheelZoom: false, // Отключаем зум колесиком, так как сверху оверлей
+          });
+
+          // Добавляем маркер
+          window.DG.marker(coords).addTo(map);
+        });
+      }
+    };
+
+    // Проверяем, загружен ли уже скрипт
+    if (!window.DG) {
+      const script = document.createElement("script");
+      script.src = "https://maps.api.2gis.ru/2.0/loader.js?pkg=full";
+      script.onload = initMap;
+      document.head.appendChild(script);
+    } else {
+      initMap();
+    }
+
+    // Очистка при размонтировании
+    return () => {
+      if (map) {
+        map.remove();
+      }
+    };
+  }, []);
+
   return (
     <section id="contacts" className="py-24 bg-zinc-950">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -136,13 +179,25 @@ export default function Contacts() {
             </form>
           </div>
 
-          {/* 2GIS Map */}
-          <div className="h-full min-h-[400px] bg-zinc-900 border border-zinc-800 relative overflow-hidden">
-            <iframe
-              src="https://widgets.2gis.com/widget?type=firmsonmap&options=%7B%22pos%22%3A%7B%22lat%22%3A45.019468%2C%22lon%22%3A39.063186%2C%22zoom%22%3A16%7D%2C%22opt%22%3A%7B%22city%22%3A%22krasnodar%22%7D%2C%22org%22%3A%2270000001022289758%22%7D"
-              className="w-full h-full absolute inset-0 border-0"
-              allowFullScreen={true}
-            ></iframe>
+          {/* 2GIS Map Custom Widget */}
+          <div className="h-full min-h-[400px] bg-zinc-900 border border-zinc-800 relative overflow-hidden group">
+
+            {/* Контейнер для самой карты */}
+            <div id="map-root" className="w-full h-full absolute inset-0 z-0"></div>
+
+            {/* Оверлей затемнения с кнопкой, который вы просили */}
+            <div className="absolute inset-0 z-10 flex items-center justify-center bg-black/40 pointer-events-none transition-colors duration-300">
+              <a
+                href="https://2gis.ru/krasnodar/firm/70000001022289758"
+                target="_blank"
+                rel="noopener noreferrer"
+                // pointer-events-auto возвращает кликабельность самой кнопке
+                className="pointer-events-auto bg-red-600 text-white font-bold uppercase tracking-wider py-4 px-8 hover:bg-red-700 transition-colors shadow-lg"
+              >
+                Открыть в 2ГИС
+              </a>
+            </div>
+
           </div>
         </div>
       </div>
