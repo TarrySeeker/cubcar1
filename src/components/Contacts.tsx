@@ -136,15 +136,28 @@ export default function Contacts() {
             </form>
           </div>
 
-          {/* Map */}
-          <div className="h-full min-h-[400px] bg-zinc-900 border border-zinc-800 relative group overflow-hidden">
-            <iframe
-              src="https://widgets.2gis.com/widget?type=firmsonmap&options=%7B%22pos%22%3A%7B%22lat%22%3A45.019468%2C%22lon%22%3A39.063186%2C%22zoom%22%3A16%7D%2C%22opt%22%3A%7B%22city%22%3A%22krasnodar%22%7D%2C%22org%22%3A%2270000001022289758%22%7D"
-              className="w-full h-full absolute inset-0"
-              frameBorder="0"
-              allowFullScreen={true}
-            ></iframe>
-          </div>
+          <a
+            href="https://2gis.ru/krasnodar/firm/70000001022289758"
+            target="_blank"
+            rel="noreferrer"
+            className="block h-full min-h-[400px] bg-zinc-900 border border-zinc-800 relative group overflow-hidden"
+          >
+            <div className="absolute inset-0 flex items-center justify-center z-10">
+              <div className="bg-zinc-950/90 backdrop-blur-sm border border-zinc-800 p-6 flex flex-col items-center group-hover:border-red-600/50 transition-colors">
+                <MapPin className="w-10 h-10 text-red-600 mb-3 animate-bounce" />
+                <span className="text-white font-bold uppercase tracking-wider text-sm mb-1">
+                  ул. им. В.Н. Мачуги, 48
+                </span>
+                <span className="text-zinc-500 text-xs">Открыть в 2ГИС →</span>
+              </div>
+            </div>
+            <img
+              src="https://images.unsplash.com/photo-1524661135-423995f22d0b?q=80&w=1000&auto=format&fit=crop"
+              alt="Карта"
+              className="w-full h-full object-cover opacity-40 group-hover:opacity-30 transition-opacity duration-500 grayscale"
+              referrerPolicy="no-referrer"
+            />
+          </a>
         </div>
       </div>
     </section>
