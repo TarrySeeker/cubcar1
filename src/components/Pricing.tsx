@@ -162,21 +162,6 @@ export default function Pricing() {
           </p>
         </div>
 
-        <div className="bg-zinc-900 border border-zinc-800 p-1">
-          {prices.map((item, idx) => (
-            <div
-              key={idx}
-              className="flex justify-between items-center p-6 border-b border-zinc-800 last:border-0 hover:bg-zinc-800/50 transition-colors group"
-            >
-              <span className="text-zinc-300 font-medium md:text-lg group-hover:text-white transition-colors">
-                {item.name}
-              </span>
-              <div className="flex items-center gap-4">
-                <span className="text-white font-bold md:text-xl tracking-wide">
-                  {item.price}
-                </span>
-              </div>
-            </div>
         <div className="grid md:grid-cols-2 gap-6">
           {priceCategories.map((cat, idx) => (
             <CategoryBlock key={idx} category={cat} />

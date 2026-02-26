@@ -139,8 +139,8 @@ export default function Contacts() {
           {/* Map */}
           <div className="h-full min-h-[400px] bg-zinc-900 border border-zinc-800 relative group overflow-hidden">
             <iframe
-              src="https://yandex.ru/map-widget/v1/?text=Краснодар%2C%20улица%20им.%20В.Н.%20Мачуги%2C%2048"
-              className="w-full h-full absolute inset-0 grayscale opacity-80 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500"
+              src="https://widgets.2gis.com/widget?type=firmsonmap&options=%7B%22pos%22%3A%7B%22lat%22%3A45.019468%2C%22lon%22%3A39.063186%2C%22zoom%22%3A16%7D%2C%22opt%22%3A%7B%22city%22%3A%22krasnodar%22%7D%2C%22org%22%3A%2270000001022289758%22%7D"
+              className="w-full h-full absolute inset-0"
               frameBorder="0"
               allowFullScreen={true}
             ></iframe>

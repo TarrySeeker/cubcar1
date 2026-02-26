@@ -29,8 +29,8 @@ export default function Hero() {
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-600 to-red-400">
               автосервис
             </span>
-            <br className="hidden md:block" />
-            <span className="whitespace-nowrap md:whitespace-normal">{" "}в Краснодаре</span>
+            <br />
+            в Краснодаре
           </h1>
 
           <p className="text-lg md:text-xl text-zinc-400 mb-10 max-w-2xl font-medium leading-relaxed">
