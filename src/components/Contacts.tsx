@@ -138,21 +138,12 @@ export default function Contacts() {
 
           {/* Map */}
           <div className="h-full min-h-[400px] bg-zinc-900 border border-zinc-800 relative group overflow-hidden">
-            <div className="absolute inset-0 flex items-center justify-center z-10 pointer-events-none">
-              <div className="bg-zinc-950/90 backdrop-blur-sm border border-zinc-800 p-4 flex flex-col items-center">
-                <MapPin className="w-8 h-8 text-red-600 mb-2 animate-bounce" />
-                <span className="text-white font-bold uppercase tracking-wider text-sm">
-                  улица им. В.Н. Мачуги, 48
-                </span>
-              </div>
-            </div>
-            {/* Map Placeholder Image */}
-            <img
-              src="https://images.unsplash.com/photo-1524661135-423995f22d0b?q=80&w=1000&auto=format&fit=crop"
-              alt="Map"
-              className="w-full h-full object-cover opacity-50 group-hover:opacity-40 transition-opacity duration-500 grayscale"
-              referrerPolicy="no-referrer"
-            />
+            <iframe
+              src="https://yandex.ru/map-widget/v1/?text=Краснодар%2C%20улица%20им.%20В.Н.%20Мачуги%2C%2048"
+              className="w-full h-full absolute inset-0 grayscale opacity-80 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500"
+              frameBorder="0"
+              allowFullScreen={true}
+            ></iframe>
           </div>
         </div>
       </div>

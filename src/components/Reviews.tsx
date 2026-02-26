@@ -3,7 +3,7 @@ import { Star } from "lucide-react";
 const reviews = [
   {
     name: "Алексей С.",
-    text: "Самый лучший сервис в городе Сочи. Быстро и качественно. Делал сход-развал и менял масло, все на высшем уровне.",
+    text: "Самый лучший сервис в Краснодаре. Быстро и качественно. Делал сход-развал и менял масло, все на высшем уровне.",
     date: "2 недели назад",
   },
   {
@@ -45,7 +45,7 @@ export default function Reviews() {
                 ))}
               </div>
               <div className="text-zinc-500 text-xs font-bold uppercase tracking-wider">
-                На основе 119+ оценок в 2ГИС
+                На основе 28 оценок в 2ГИС
               </div>
             </div>
           </div>
