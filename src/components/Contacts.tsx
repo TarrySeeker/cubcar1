@@ -9,7 +9,7 @@ export default function Contacts() {
       if (window.DG) {
         window.DG.then(() => {
           // Координаты из вашего iframe
-          const coords = [45.019468, 39.063186];
+          const coords = [45.013474, 39.079644];
 
           // Инициализация карты
           map = window.DG.map("map-root", {
